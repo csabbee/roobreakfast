@@ -1,0 +1,35 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-21 21:02:35
+project --topLevelPackage com.acme.karcsi
+jpa setup --provider HIBERNATE --database H2_IN_MEMORY 
+hint
+entity jpa --class com.acme.karcsi.domain.Food --activeRecord false --identifierField id
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-21 21:05:37
+hint
+field string --fieldName name --notNull 
+field string --fieldName description
+field number --fieldName price --type java.lang.Float
+repository jpa --interface ~.repository.FoodRepository --entity ~.domain.Food
+enum type --class ~.FoodType
+enum constant --name STARTER
+enum constant --name SOUP
+enum constant --name MAIN
+enum constant --name DESSERT
+focus --class ~.domain.Food
+field enum --fieldName type --type ~.FoodType
+hint
+web mvc setup
+web mvc all --package com.acme.karcsi.controller
+hint
+help
+system properties
+json all
+date
+// [failed] entity jpa --class ~.domain.Order --activeRecord false
+entity jpa --class ~.domain.FoodOrder --activeRecord false
+focus --class ~.FoodType
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-21 21:24:46
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-21 21:25:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-22 08:06:43
+hint
+help
